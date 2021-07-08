@@ -22,15 +22,18 @@ OUTPUT:
 The decimal form of the number is :  1101
 """
 
+
 def decTobin(n):
-    assert n>=0 and int(n) == n, "The number must be positive integer number"
+    assert n >= 0 and int(n) == n, "The number must be positive integer number"
     if n == 0:
         return 0
     else:
         return (n % 2) + 10 * decTobin(int(n/2))
 
+
 def main():
     print(f'The decimal form of the number is : ', str(decTobin(13)))
+
 
 if __name__ == "__main__":
     main()

@@ -13,8 +13,11 @@ x^n = x * x^n-1
 OUTPUT: 
 The result is :  8
 """
+
+
 def powerof(base, exponent):
-    assert exponent >= 0 and int(exponent) == exponent, "The Exponent cannot be negative / non-integer number"
+    assert exponent >= 0 and int(
+        exponent) == exponent, "The Exponent cannot be negative / non-integer number"
     if exponent == 0:
         return 1
     if exponent == 1:

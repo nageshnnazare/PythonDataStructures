@@ -9,10 +9,10 @@ from array import *
 # 1. Creating an Array and Traversing
 print(f"\nCreating and Traversing an array")
 
-my_array = array('i', [1,2,3,4,5,6])
+my_array = array('i', [1, 2, 3, 4, 5, 6])
 for i in my_array:
     print(i)
-    
+
 # 2. Accessing individual elements through indexes
 print(f"\nAccessing individual elements through indexes")
 
@@ -33,14 +33,14 @@ print(my_array)
 # 5. Extend python array with extend()
 print(f"\nExtending python array with extend()")
 
-my_array_2 = array('i', [90,91,92])
+my_array_2 = array('i', [90, 91, 92])
 my_array.extend(my_array_2)
 print(my_array)
 
 # 6. Add elements from list into array with fromlist()
 print(f"\nAdd elements from list into array with fromlist()")
 
-temp_list = [6,7,50,51,52]
+temp_list = [6, 7, 50, 51, 52]
 my_array.fromlist(temp_list)
 print(my_array)
 

@@ -16,12 +16,14 @@ OUTPUT:
 The sum of the digits is : 4
 """
 
+
 def sumOfdigits(n):
-    assert n >= 0 and int(n) == n, "The number has to positive integer number only"
+    assert n >= 0 and int(
+        n) == n, "The number has to positive integer number only"
     if n in [0]:
         return 0
     else:
-        return int(n%10) + sumOfdigits(n//10)
+        return int(n % 10) + sumOfdigits(n//10)
 
 
 def main():

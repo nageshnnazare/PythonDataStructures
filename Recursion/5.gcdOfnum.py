@@ -22,15 +22,19 @@ OUTPUT:
 The GCD of the numbers is :  6
 """
 
+
 def gcd(a, b):
-    assert a >=0 and b>=0 and int(a) == a and int(b) == b, "The numbers must be positive integer numbers"
+    assert a >= 0 and b >= 0 and int(a) == a and int(
+        b) == b, "The numbers must be positive integer numbers"
     if b == 0:
         return a
     else:
-        return gcd(b, a%b)
+        return gcd(b, a % b)
+
 
 def main():
     print(f'The GCD of the numbers is : ', str(gcd(48, 18)))
+
 
 if __name__ == "__main__":
     main()

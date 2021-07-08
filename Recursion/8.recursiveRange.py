@@ -13,11 +13,13 @@ OUTPUT:
 The recursive range is :  66
 """
 
+
 def recursiveRange(num):
     if num <= 0:
         return 0
     else:
         return num + recursiveRange(num - 1)
+
 
 def main():
     print(f"The recursive range is : ", str(recursiveRange(11)))

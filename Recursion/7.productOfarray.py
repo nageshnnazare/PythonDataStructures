@@ -14,14 +14,17 @@ OUTPUT:
 The product of the array is 120
 """
 
+
 def productofarray(arr):
     if len(arr) == 0:
         return 1
     else:
         return arr[0] * productofarray(arr[1:])
 
+
 def main():
-    print(f'The product of the array is', str(productofarray([1,2,3,4,5])))
+    print(f'The product of the array is', str(productofarray([1, 2, 3, 4, 5])))
+
 
 if __name__ == "__main__":
     main()

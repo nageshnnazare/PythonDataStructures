@@ -16,17 +16,18 @@ The factorial of the number is : 120
 import sys
 sys.setrecursionlimit(1000)
 
+
 def factorial(n):
     assert n >= 0 and int(n) == n, "The number must be a positive integer only"
     if n in [0, 1]:
-       return 1 
+        return 1
     else:
         return n * factorial(n-1)
 
 
 def main():
     print(f'The factorial of the number is : ', str(factorial(5)))
-    
+
 
 if __name__ == '__main__':
     main()
