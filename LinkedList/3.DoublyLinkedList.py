@@ -58,6 +58,75 @@ class DoublyLinkedList:
                 newNode.next.prev = newNode
                 tempNode.next = newNode
 
+    def traverseDLL(self):
+        if self.head is None:
+            print('Doubly linked list does not exists!')
+        else:
+            tempNode = self.head
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.next
+
+    def reverseTraverseDLL(self):
+        if self.head is None:
+            print('Doubly linked list does not exists!')
+        else:
+            tempNode = self.tail
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.prev
+
+    def searchinDLL(self, value):
+        if self.head is None:
+            print('Doubly linked list does not exists!')
+        else:
+            tempNode = self.head
+            while tempNode:
+                if tempNode.value == value:
+                    return tempNode.value
+                tempNode = tempNode.next
+            return "Element does not exists in the list!"
+
+    def deleteinDLL(self, location):
+        if self.head is None:
+            print('Doubly linked list does not exists!')
+        else:
+            if(location == 0):
+                if(self.head == self.tail):
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = None
+            elif(location == -1):
+                if(self.head == self.tail):
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.prev
+                    self.tail.next = None
+            else:
+                currNode = self.head
+                index = 0
+                while index < location - 1:
+                    currNode = currNode.next
+                    index += 1
+                currNode.next = currNode.next.next
+                currNode.next.prev = currNode
+            print('Node deleted successfully')
+
+    def deleteEntireDLL(self):
+        if self.head is None:
+            print('Doubly linked list does not exists!')
+        else:
+            tempNode = self.head
+            while tempNode:
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None
+            self.tail = None
+        print('Linked list deleted successfully')
+
 
 def main():
     dll = DoublyLinkedList()
@@ -66,6 +135,12 @@ def main():
     dll.insertinDLL(2, 0)
     dll.insertinDLL(5, -1)
     dll.insertinDLL(3, 2)
+    # dll.traverseDLL()
+    # dll.reverseTraverseDLL()
+
+    # print(dll.searchinDLL(6))
+    # print(dll.searchinDLL(5))
+    dll.deleteinDLL(0)
 
     print([node.value for node in dll])
 
