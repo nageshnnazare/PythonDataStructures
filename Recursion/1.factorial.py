@@ -13,9 +13,6 @@ OUTPUT:
 The factorial of the number is : 120
 """
 
-import sys
-sys.setrecursionlimit(1000)
-
 
 def factorial(n):
     assert n >= 0 and int(n) == n, "The number must be a positive integer only"
