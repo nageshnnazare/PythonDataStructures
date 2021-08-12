@@ -98,7 +98,51 @@ class CircularDoublyLinkedList:
                 tempNode = tempNode.next
 
     def deleteinCDLL(self, location):
-        pass
+        if self.head is None:
+            return "Circular Doubly linked List does not exist!"
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = self.tail
+                    self.tail.next = self.head
+            elif location == -1:
+                if self.head == self.tail:
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.prev
+                    self.tail.next = self.head
+                    self.head.prev = self.tail
+            else:
+                currNode = self.head
+                index = 0
+                while index < location - 1:
+                    currNode = currNode.next
+                    index += 1
+                currNode.next = currNode.next.next
+                currNode.next.prev = currNode
+            return "Node deleted successfully"
+
+    def deleteEntireCDLL(self):
+        if self.head is None:
+            print('Circular Doubly linked list does not exists!')
+        else:
+            self.tail.next = None
+            tempNode = self.head
+            while tempNode:
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None
+            self.tail = None
+        return "CDLL deleted successfully"
 
 
 def main():
@@ -112,8 +156,10 @@ def main():
 
     # cdll.traverseCDLL()
     # cdll.reversetraverseCDLL()
-    print(cdll.searchinCDLL(4))
-    print(cdll.searchinCDLL(6))
+    # print(cdll.searchinCDLL(4))
+    # print(cdll.searchinCDLL(6))
+    # cdll.deleteinCDLL(2)
+    cdll.deleteEntireCDLL()
 
     print([node.value for node in cdll])
 
